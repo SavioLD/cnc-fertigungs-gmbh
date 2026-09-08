@@ -1,0 +1,22 @@
+HIER BILDMATERIAL DER CNC FERTIGUNGS GMBH ABLEGEN
+==================================================
+
+Hero-Fotos (Querformat, mind. ~1600 px breit, Motiv rechts – links liegt der Text):
+
+  hero.jpg           -> allgemeines Hero-Bild (ohne ?stelle=-Parameter)
+  cnc-dreher.jpg     -> Foto zur Stelle "CNC-Dreher (Heidenhain)"  (?stelle=cnc-dreher)
+  rundschleifer.jpg  -> Foto zur Stelle "Rundschleifer"            (?stelle=rundschleifer)
+
+Ideale Motive: echte Zerspanung/Maschinen (CNC-Drehmaschine mit Heidenhain-
+Steuerung, Rundschleifmaschine), Mitarbeiter an der Maschine, Präzisionsteile,
+Halle/Maschinenpark. Authentische Werksfotos konvertieren besser als Stock.
+
+Logo (ersetzt automatisch den Text-Schriftzug):
+
+  cnc-logo.svg  oder  cnc-logo.png        -> für helle Flächen (Kopfzeile)
+  cnc-logo-weiss.svg  oder  .png          -> helle Logo-Variante für Hero + Footer
+
+Fehlt ein Bild, bleibt automatisch der Farbverlauf stehen (nichts bricht).
+
+Sobald echtes Bildmaterial hier liegt, werden daraus die Meta-Ads-Creatives
+erstellt (Ordner ../creatives/).

@@ -1,0 +1,15 @@
+CREATIVES – META ADS (CNC FERTIGUNGS GMBH)
+==========================================
+
+Die Creatives werden erstellt, SOBALD echtes Bildmaterial im Repo liegt
+(Ordner ../bilder/). Genau so gewünscht: erst Bildmaterial, dann Creatives
+aus diesem Material – für maximale Bewerber-Qualität und Glaubwürdigkeit.
+
+Geplante Formate je Stelle (CNC-Dreher / Rundschleifer):
+  creative-cnc-dreher-4x5.png        (1080 x 1350  – Feed)
+  creative-cnc-dreher-story.png      (1080 x 1920  – Story/Reels)
+  creative-rundschleifer-4x5.png     (1080 x 1350  – Feed)
+  creative-rundschleifer-story.png   (1080 x 1920  – Story/Reels)
+
+Die Anzeigentexte (Primary Text / Headlines / Descriptions) stehen bereits in
+../werbetexte-meta-ads.md und sind auf die CNC Fertigungs GmbH zugeschnitten.
