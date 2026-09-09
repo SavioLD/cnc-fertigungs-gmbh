@@ -71,9 +71,9 @@ Prozess frisch (keine dauerhafte Sperre).
 ## Bewerbungen (Leadtable)
 
 Jede abgeschlossene Bewerbung wird per Webhook an die **Leadtable-Kachel** der CNC
-Fertigungs GmbH gesendet. Felder u. a.: `vorname`, `nachname`, `email`, `telefon`,
-`stelle`, `erfahrung`, `cnc_erfahrung`, `technik`, `schicht`, `qualifikation_score`,
-`lebenslauf`, `datenschutz`, `quelle`, `seite`.
+Fertigungs GmbH gesendet. Felder u. a.: `name` (ein Feld, Vorname + Nachname),
+`email`, `telefon`, `stelle`, `erfahrung`, `cnc_erfahrung`, `technik`, `schicht`,
+`qualifikation_score`, `lebenslauf`, `datenschutz`, `quelle`, `seite`.
 Der Webhook ist in `index.html` in der Variable `WEBHOOK_URL` hinterlegt
 (`https://api-v2.lead-table.com/api/webhook/generic/…`).
 
