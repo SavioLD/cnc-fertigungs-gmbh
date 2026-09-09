@@ -868,7 +868,9 @@ footer{padding:52px 0 36px;background:var(--brand-900);color:#dcecfb}
 
   function collect(){
     function val(name){ var c=form.querySelector('input[name="'+name+'"]:checked'); if(c) return c.value; var inp=form.querySelector('input[name="'+name+'"]:not([type="radio"])'); return inp?inp.value.trim():""; }
-    return { vorname:val("vorname"), nachname:val("nachname"), email:val("email"), telefon:val("telefon"),
+    // Name bewusst NUR als ein einziges Feld senden, damit Leadtable im
+    // "Name"-Feld nichts mehr zusammensetzt/doppelt (kein vorname/nachname zusätzlich).
+    return { name:(val("vorname")+" "+val("nachname")).trim(), email:val("email"), telefon:val("telefon"),
              stelle:val("stelle"), erfahrung:val("erfahrung"), cnc_erfahrung:val("cnc_erfahrung"), technik:val("technik"), schicht:val("schicht"),
              qualifikation_score:String(qualScore().total)+" von 10", lebenslauf:"", datenschutz:"Ja (Einwilligung mit Absenden, Art. 6 Abs. 1 lit. a DSGVO)",
              quelle:"Karriere-Landingpage CNC Fertigung", seite:location.href };
