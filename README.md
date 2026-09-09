@@ -49,17 +49,31 @@ beim Erfahrungs-Schritt:
 - `…/?stelle=cnc-dreher`
 - `…/?stelle=rundschleifer`
 
-## Screening (Vorfilterung)
+## Screening (Vorfilterung) mit Punktelogik
 
-Im 2. Schritt wird die Qualifikation abgefragt. Wer „Weder Ausbildung noch Erfahrung
-im Bereich“ wählt, wird freundlich ausgesteuert (**kein Lead** an Leadtable). Ein
-Seiten-Neuladen startet den Prozess frisch (keine dauerhafte Sperre).
+Der Funnel stellt **4 Qualifizierungsfragen** (je Antwort ein Score):
+
+1. `erfahrung` – Ausbildung/Berufserfahrung (0–3)
+2. `cnc_erfahrung` – Erfahrung an CNC-Maschinen / Steuerung (0–3)
+3. `technik` – Zeichnung lesen & Messmittel (0–2)
+4. `schicht` – Bereitschaft Zweischichtbetrieb (0–2)
+
+Maximal erreichbar: **10 Punkte**. Eine Bewerbung wird **freundlich abgelehnt**
+(**kein Lead** an Leadtable) **nur dann**, wenn die Summe `<= REJECT_AT` ist –
+Standard `REJECT_AT = 0`, d. h. **ausschließlich, wenn alle vier Fragen maximal
+schlecht** beantwortet wurden. Alles andere geht als Lead durch.
+
+**Strenger/lockerer stellen:** In `index.html` die Variable `REJECT_AT` erhöhen
+(z. B. `2`, dann werden auch sehr schwache Profile ausgesteuert) oder die
+`data-score`-Werte an den Antworten anpassen. Ein Seiten-Neuladen startet den
+Prozess frisch (keine dauerhafte Sperre).
 
 ## Bewerbungen (Leadtable)
 
 Jede abgeschlossene Bewerbung wird per Webhook an die **Leadtable-Kachel** der CNC
-Fertigungs GmbH gesendet. Felder u. a.: `vorname`, `nachname`, `name`, `email`,
-`telefon`, `stelle`, `erfahrung`, `lebenslauf`, `datenschutz`, `quelle`, `seite`.
+Fertigungs GmbH gesendet. Felder u. a.: `vorname`, `nachname`, `email`, `telefon`,
+`stelle`, `erfahrung`, `cnc_erfahrung`, `technik`, `schicht`, `qualifikation_score`,
+`lebenslauf`, `datenschutz`, `quelle`, `seite`.
 Der Webhook ist in `index.html` in der Variable `WEBHOOK_URL` hinterlegt
 (`https://api-v2.lead-table.com/api/webhook/generic/…`).
 

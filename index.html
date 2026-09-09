@@ -526,15 +526,52 @@ footer{padding:52px 0 36px;background:var(--brand-900);color:#dcecfb}
           <p class="hint">Bei uns arbeiten Menschen, die ihr Handwerk verstehen. Sei einfach ehrlich.</p>
           <p class="q">Welche Qualifikation bringst du für die Stelle mit?<span class="req">*</span></p>
           <div class="choice-grid" data-field="erfahrung">
-            <label class="choice"><input type="radio" name="erfahrung" value="Abgeschlossene Ausbildung im Bereich + mehrjährige Berufserfahrung" /><span class="key">A</span><span>Abgeschlossene Ausbildung im Bereich <small>+ mehrjährige Berufserfahrung</small></span></label>
-            <label class="choice"><input type="radio" name="erfahrung" value="Abgeschlossene Ausbildung im Bereich" /><span class="key">B</span><span>Abgeschlossene Ausbildung im Bereich</span></label>
-            <label class="choice"><input type="radio" name="erfahrung" value="Mehrjährige Berufserfahrung im Bereich (ohne passende Ausbildung)" /><span class="key">C</span><span>Mehrjährige Berufserfahrung im Bereich <small>ohne passende Ausbildung</small></span></label>
-            <label class="choice"><input type="radio" name="erfahrung" value="Keine Ausbildung und keine Erfahrung im Bereich" /><span class="key">D</span><span>Weder Ausbildung noch Erfahrung im Bereich</span></label>
+            <label class="choice"><input type="radio" name="erfahrung" data-score="3" value="Abgeschlossene Ausbildung im Bereich + mehrjährige Berufserfahrung" /><span class="key">A</span><span>Abgeschlossene Ausbildung im Bereich <small>+ mehrjährige Berufserfahrung</small></span></label>
+            <label class="choice"><input type="radio" name="erfahrung" data-score="2" value="Abgeschlossene Ausbildung im Bereich" /><span class="key">B</span><span>Abgeschlossene Ausbildung im Bereich</span></label>
+            <label class="choice"><input type="radio" name="erfahrung" data-score="1" value="Mehrjährige Berufserfahrung im Bereich (ohne passende Ausbildung)" /><span class="key">C</span><span>Mehrjährige Berufserfahrung im Bereich <small>ohne passende Ausbildung</small></span></label>
+            <label class="choice"><input type="radio" name="erfahrung" data-score="0" value="Keine Ausbildung und keine Erfahrung im Bereich" /><span class="key">D</span><span>Weder Ausbildung noch Erfahrung im Bereich</span></label>
           </div>
         </div>
 
         <!-- STEP 3 -->
         <div class="fstep" data-step="3">
+          <h3>Erfahrung an CNC-Maschinen</h3>
+          <p class="hint">Steuerungen wie Heidenhain, Fanuc oder Siemens.</p>
+          <p class="q">Wie viel Erfahrung hast du an CNC-Maschinen?<span class="req">*</span></p>
+          <div class="choice-grid" data-field="cnc_erfahrung">
+            <label class="choice"><input type="radio" name="cnc_erfahrung" data-score="3" value="Programmiere und richte selbstständig ein" /><span class="key">A</span><span>Ich programmiere &amp; richte selbstständig ein</span></label>
+            <label class="choice"><input type="radio" name="cnc_erfahrung" data-score="2" value="Bediene CNC-Maschinen sicher" /><span class="key">B</span><span>Ich bediene CNC-Maschinen sicher</span></label>
+            <label class="choice"><input type="radio" name="cnc_erfahrung" data-score="1" value="Grundkenntnisse, noch wenig Praxis" /><span class="key">C</span><span>Grundkenntnisse <small>noch wenig Praxis</small></span></label>
+            <label class="choice"><input type="radio" name="cnc_erfahrung" data-score="0" value="Keine Erfahrung mit CNC-Maschinen" /><span class="key">D</span><span>Keine Erfahrung mit CNC-Maschinen</span></label>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="fstep" data-step="4">
+          <h3>Zeichnung &amp; Messtechnik</h3>
+          <p class="hint">Der Alltag in der Zerspanung.</p>
+          <p class="q">Technische Zeichnungen lesen und mit Messmitteln (z.&nbsp;B. Bügelmessschraube) messen?<span class="req">*</span></p>
+          <div class="choice-grid" data-field="technik">
+            <label class="choice"><input type="radio" name="technik" data-score="2" value="Ja, beides sicher" /><span class="key">A</span><span>Ja, beides sicher</span></label>
+            <label class="choice"><input type="radio" name="technik" data-score="1" value="Grundkenntnisse" /><span class="key">B</span><span>Grundkenntnisse</span></label>
+            <label class="choice"><input type="radio" name="technik" data-score="0" value="Kann ich (noch) nicht" /><span class="key">C</span><span>Kann ich (noch) nicht</span></label>
+          </div>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="fstep" data-step="5">
+          <h3>Schichtbereitschaft</h3>
+          <p class="hint">Wir fertigen im Zweischichtbetrieb.</p>
+          <p class="q">Früh-/Spätschicht (Zweischicht) – passt das für dich?<span class="req">*</span></p>
+          <div class="choice-grid" data-field="schicht">
+            <label class="choice"><input type="radio" name="schicht" data-score="2" value="Ja, kein Problem" /><span class="key">A</span><span>Ja, kein Problem</span></label>
+            <label class="choice"><input type="radio" name="schicht" data-score="1" value="Nur eingeschränkt / nach Absprache" /><span class="key">B</span><span>Nur eingeschränkt <small>nach Absprache</small></span></label>
+            <label class="choice"><input type="radio" name="schicht" data-score="0" value="Nein, Schichtarbeit passt nicht" /><span class="key">C</span><span>Nein, Schichtarbeit passt nicht</span></label>
+          </div>
+        </div>
+
+        <!-- STEP 6 -->
+        <div class="fstep" data-step="6">
           <h3>Du hast es fast geschafft</h3>
           <p class="hint">Hinterlasse kurz deine Kontaktdaten. Wir melden uns persönlich bei dir.</p>
           <div class="frow">
@@ -573,7 +610,7 @@ footer{padding:52px 0 36px;background:var(--brand-900);color:#dcecfb}
         <div class="result" id="screenoutView">
           <div class="result__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg></div>
           <h3>Danke für dein Interesse</h3>
-          <p>Für diese Stelle setzen wir eine abgeschlossene Ausbildung oder einschlägige Berufserfahrung im Zerspanungsbereich voraus. Aktuell passt das leider noch nicht. Du bist überzeugt, dass du trotzdem zu uns passt? Dann schreib uns gerne direkt an <a href="mailto:info@cncfertigung.de">info@cncfertigung.de</a>.<br /><br />Aus Versehen falsch angeklickt? Lade die Seite einfach neu und versuche es erneut.</p>
+          <p>Nach deinen Angaben passt es für diese Stelle aktuell leider noch nicht – wir setzen zumindest handwerkliche Grundlagen in der Zerspanung voraus. Du bist überzeugt, dass du trotzdem zu uns passt? Dann schreib uns gerne direkt an <a href="mailto:info@cncfertigung.de">info@cncfertigung.de</a>.<br /><br />Aus Versehen etwas falsch angeklickt? Lade die Seite einfach neu und versuche es erneut.</p>
         </div>
 
         <div class="fnav" id="formNav">
@@ -651,7 +688,9 @@ footer{padding:52px 0 36px;background:var(--brand-900);color:#dcecfb}
   var UPLOAD_BUCKET = "bewerbungen";
   var UPLOAD_MAX    = 10 * 1024 * 1024;
   var UPLOAD_TYPES  = ["application/pdf","image/jpeg","image/png","image/webp","application/msword","application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
-  var SCREEN_OUT    = ["Keine Ausbildung und keine Erfahrung im Bereich"];
+  /* Qualifizierungs-Scoring: Absage NUR, wenn ALLE Fragen maximal schlecht (Summe <= REJECT_AT). */
+  var QUAL_FIELDS   = ["erfahrung","cnc_erfahrung","technik","schicht"];
+  var REJECT_AT     = 0;
 
   var ALIASES = {
     "cnc-dreher":"cnc-dreher","cncdreher":"cnc-dreher","dreher":"cnc-dreher","cnc":"cnc-dreher","heidenhain":"cnc-dreher","drehen":"cnc-dreher","zerspaner":"cnc-dreher",
@@ -732,10 +771,11 @@ footer{padding:52px 0 36px;background:var(--brand-900);color:#dcecfb}
     btnNext.disabled=!stepValid(current);
     errBox.classList.remove("is-visible");
   }
-  function isScreenedOut(){ return SCREEN_OUT.indexOf(selectedValue("erfahrung"))!==-1; }
+  function qualScore(){ var t=0,a=0; QUAL_FIELDS.forEach(function(f){ var c=form.querySelector('input[name="'+f+'"]:checked'); if(c){ a++; t+=parseInt(c.getAttribute("data-score")||"0",10); } }); return {total:t, answered:a}; }
+  function isScreenedOut(){ var s=qualScore(); return s.answered===QUAL_FIELDS.length && s.total<=REJECT_AT; }
   function next(){
     if (locked || !stepValid(current) || submitting) return;
-    if (current===2 && isScreenedOut()){ showScreenout(); return; }
+    if (current===TOTAL-1 && isScreenedOut()){ showScreenout(); return; }
     if (current===TOTAL){ submit(); return; }
     current++; render();
     var card=document.querySelector(".form-card");
@@ -829,7 +869,8 @@ footer{padding:52px 0 36px;background:var(--brand-900);color:#dcecfb}
   function collect(){
     function val(name){ var c=form.querySelector('input[name="'+name+'"]:checked'); if(c) return c.value; var inp=form.querySelector('input[name="'+name+'"]:not([type="radio"])'); return inp?inp.value.trim():""; }
     return { vorname:val("vorname"), nachname:val("nachname"), email:val("email"), telefon:val("telefon"),
-             stelle:val("stelle"), erfahrung:val("erfahrung"), lebenslauf:"", datenschutz:"Ja (Einwilligung mit Absenden, Art. 6 Abs. 1 lit. a DSGVO)",
+             stelle:val("stelle"), erfahrung:val("erfahrung"), cnc_erfahrung:val("cnc_erfahrung"), technik:val("technik"), schicht:val("schicht"),
+             qualifikation_score:String(qualScore().total)+" von 10", lebenslauf:"", datenschutz:"Ja (Einwilligung mit Absenden, Art. 6 Abs. 1 lit. a DSGVO)",
              quelle:"Karriere-Landingpage CNC Fertigung", seite:location.href };
   }
   function submit(){
