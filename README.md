@@ -18,30 +18,28 @@ Aufbau 1:1 an der ALWA-Karriereseite orientiert – nur in eigenem CI und mit de
 
 ## ⚠️ CI-Farben (bitte prüfen)
 
-Die Website `cncfertigung.de` war aus dieser Umgebung nicht erreichbar (Egress-Sperre),
-daher wurde ein professionelles **Industrieblau als Platzhalter-CI** gewählt.
-Sämtliche Farben stecken als CSS-Variablen ganz oben in `index.html` unter `:root`
-(`--brand`, `--brand-dark`, `--brand-700`, `--brand-900`, `--brand-soft`, `--grad`,
-`--bg-soft`, `--panel-2`). Ein CI-Wechsel ist damit ein Ein-Zeilen-Tausch pro Farbe.
-Sobald das echte Logo in `bilder/` liegt bzw. die Hausfarben bekannt sind, bitte die
-Tokens anpassen (oder kurz Bescheid geben – wird sofort nachgezogen).
-
-Auch `theme-color` (im `<head>`) entsprechend anpassen.
+Das CI ist an die **Firmenlogo-Farbe** angepasst (Royalblau ≈ `#1a4e8c`, entnommen aus
+`md2x-9.png`). Sämtliche Farben stecken als CSS-Variablen ganz oben in `index.html` unter
+`:root` (`--brand`, `--brand-dark`, `--brand-700`, `--brand-900`, `--brand-soft`, `--grad`,
+`--bg-soft`, `--panel-2`) – ein Ton-Wechsel ist damit ein Ein-Zeilen-Tausch pro Farbe.
+`theme-color` (im `<head>`) ist entsprechend gesetzt.
 
 ## Bilder (Hero-Fotos + Logo)
 
-Die Fotos gehören in den Ordner **`bilder/`**. Der Hero lädt automatisch das passende
-Bild – fehlt es, bleibt ein Farbverlauf stehen (kein kaputtes Bild). Erwartete Dateinamen:
+**Aktueller Stand – bereits eingebunden:**
 
-- `bilder/hero.jpg` – allgemeines Hero-Bild (ohne `?stelle=`-Parameter)
-- `bilder/cnc-dreher.jpg` – bei `?stelle=cnc-dreher`
-- `bilder/rundschleifer.jpg` – bei `?stelle=rundschleifer`
+- **Logo:** `md2x-9.png` (im Repo-Root) wird automatisch in der Kopfzeile angezeigt.
+- **Hero-Fotos:** aus den hochgeladenen Originalfotos (`_DSC7321.jpg`, `_DSC7566.jpg`)
+  wurden **web-optimierte Versionen** erzeugt (1920 px, ~180–200 KB statt 17–18 MB) und
+  in `bilder/` abgelegt:
+  - `bilder/hero.jpg` – allgemeines Hero-Bild (aus `_DSC7321`, Mitarbeiter an der Maschine)
+  - `bilder/cnc-dreher.jpg` – bei `?stelle=cnc-dreher` (aus `_DSC7566`, CLX 450 TC Drehmaschine)
+  - `bilder/rundschleifer.jpg` – bei `?stelle=rundschleifer` (aus `_DSC7321`)
 
-Querformat, mind. ~1600 px breit. Motiv rechts platzieren – links liegt die Textfläche.
-
-**Logo:** `bilder/cnc-logo.svg` (oder `.png`) ersetzt automatisch den Text-Schriftzug in
-Kopfzeile/Hero/Footer. Für Hero + Footer (dunkler Hintergrund) zusätzlich eine helle
-Variante als `bilder/cnc-logo-weiss.svg` / `.png` ablegen.
+Die Original-Uploads bleiben unangetastet im Repo-Root liegen (nur nicht direkt eingebunden,
+da sie mit 17–18 MB die Ladezeit sprengen würden). Neue/andere Fotos einfach als
+`bilder/hero.jpg` · `bilder/cnc-dreher.jpg` · `bilder/rundschleifer.jpg` ablegen
+(Querformat, mind. ~1600 px, Motiv rechts – links liegt die Textfläche).
 
 ## Stellen-Deeplinks für die Ad
 
