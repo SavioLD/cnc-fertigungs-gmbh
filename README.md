@@ -12,7 +12,7 @@ Aufbau 1:1 an der ALWA-Karriereseite orientiert – nur in eigenem CI und mit de
 - `index.html` – die komplette Seite (self-contained, keine Build-Schritte nötig)
 - `supabase-bewerbungen.sql` – legt/aktualisiert den Storage-Bucket für den optionalen Lebenslauf-Upload
 - `bilder/` – Hero-Fotos und Logo (siehe unten)
-- `creatives/` – Meta-Ads-Creatives (folgen, sobald Bildmaterial im Repo liegt)
+- `creatives/` – Meta-Ads-Creatives (fertig: je Stelle Feed 4:5 + Story 9:16)
 - `werbetexte-meta-ads.md` – Anzeigentexte für Meta Ads (Primary Text, Headlines, Descriptions)
 - `.nojekyll` – sorgt dafür, dass GitHub Pages die Dateien 1:1 ausliefert
 
