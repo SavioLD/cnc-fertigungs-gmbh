@@ -1,7 +1,7 @@
 # Meta Ads – Werbetexte · CNC Fertigungs GmbH (Laichingen)
 
 Zielgruppe: Zerspanungs-Fachkräfte im Umkreis Laichingen / Alb-Donau-Kreis / Ulm.
-Ziel: qualifizierte Bewerbungen (CNC-Dreher mit Heidenhain, Rundschleifer).
+Ziel: qualifizierte Bewerbungen (CNC-Dreher, Rundschleifer).
 Tonalität: direkt, wertschätzend, handwerklich – kein Konzern-Sprech, „du“.
 
 **Ziel-URLs (mit Deeplink + UTM):**
@@ -14,12 +14,12 @@ Empfohlene CTA-Buttons: **„Jetzt bewerben“** (bzw. „Mehr dazu“). Platzie
 
 ---
 
-## 1) CNC-Dreher – Heidenhain-Steuerung (m/w/d)
+## 1) CNC-Dreher (m/w/d)
 
 ### Primary Text – Variante A (Handwerk & Wertschätzung)
 Du drehst Präzision – wir wissen sie zu schätzen. 🛠️
 
-Die CNC Fertigungs GmbH in Laichingen sucht einen **CNC-Dreher mit Heidenhain-Steuerung (m/w/d)**. Bei uns fertigst du keine Massenware, sondern hochpräzise Einzelteile, Prototypen und Kleinserien für den Sondermaschinenbau – auf modernem Maschinenpark.
+Die CNC Fertigungs GmbH in Laichingen sucht einen **CNC-Dreher (m/w/d)**. Bei uns fertigst du keine Massenware, sondern hochpräzise Einzelteile, Prototypen und Kleinserien für den Sondermaschinenbau – auf modernem Maschinenpark.
 
 ✅ Übertarifliche Bezahlung + Zusatzleistungen
 ✅ 30 Tage Urlaub, betriebliche Altersvorsorge & JobRad
@@ -29,18 +29,18 @@ Die CNC Fertigungs GmbH in Laichingen sucht einen **CNC-Dreher mit Heidenhain-St
 Bewirb dich in unter 60 Sekunden – ohne Anschreiben, Lebenslauf optional. 👉 Jetzt bewerben.
 
 ### Primary Text – Variante B (kurz & knackig)
-CNC-Dreher (m/w/d) mit Heidenhain gesucht – in Laichingen. 🔧
+CNC-Dreher (m/w/d) gesucht – in Laichingen. 🔧
 Unbefristet, übertariflich, 30 Tage Urlaub, bAV + JobRad. Familienbetrieb seit 1997, moderner Maschinenpark, echtes Team.
 Bewerbung in 60 Sekunden – ohne Anschreiben. Jetzt starten 👇
 
 ### Primary Text – Variante C (direkte Ansprache / Wechsel-Trigger)
 Zu wenig Wertschätzung? Immer nur die gleichen Serienteile? ⚙️
-Bei der CNC Fertigungs GmbH in Laichingen drehst du anspruchsvolle Präzisionsteile mit Heidenhain-Steuerung – und arbeitest bei einem inhabergeführten Betrieb, der dein Können sieht.
+Bei der CNC Fertigungs GmbH in Laichingen drehst du anspruchsvolle Präzisionsteile für den Sondermaschinenbau – und arbeitest bei einem inhabergeführten Betrieb, der dein Können sieht.
 Übertariflich · 30 Tage Urlaub · bAV · JobRad · unbefristet.
 👉 In 60 Sekunden bewerben – wir melden uns persönlich.
 
 ### Headlines (max. ~40 Zeichen)
-- CNC-Dreher (Heidenhain) m/w/d
+- CNC-Dreher (m/w/d) gesucht
 - Dreh dein Können zu Geld
 - Präzision zahlt sich aus
 - Jetzt in 60 Sek. bewerben

@@ -4,7 +4,7 @@ Recruiting-Landingpage für die **CNC Fertigungs GmbH** (Gottlieb-Daimler-Straß
 Aufbau 1:1 an der ALWA-Karriereseite orientiert – nur in eigenem CI und mit den beiden aktuellen Stellen.
 
 **Beworbene Stellen (nur diese):**
-- CNC-Dreher – Heidenhain-Steuerung (m/w/d)
+- CNC-Dreher (m/w/d)
 - Rundschleifer (m/w/d)
 
 ## Inhalt
