@@ -29,12 +29,12 @@ Das CI ist an die **Firmenlogo-Farbe** angepasst (Royalblau ≈ `#1a4e8c`, entno
 **Aktueller Stand – bereits eingebunden:**
 
 - **Logo:** `md2x-9.png` (im Repo-Root) wird automatisch in der Kopfzeile angezeigt.
-- **Hero-Fotos:** aus den hochgeladenen Originalfotos (`_DSC7321.jpg`, `_DSC7566.jpg`)
-  wurden **web-optimierte Versionen** erzeugt (1920 px, ~180–200 KB statt 17–18 MB) und
+- **Hero-Fotos:** aus den hochgeladenen Originalfotos (`_DSC7321.jpg`, `_DSC7566.jpg`, `_DSC7119.jpg`)
+  wurden **web-optimierte Versionen** erzeugt (1920 px, ~180–310 KB statt 17–20 MB) und
   in `bilder/` abgelegt:
   - `bilder/hero.jpg` – allgemeines Hero-Bild (aus `_DSC7321`, Mitarbeiter an der Maschine)
   - `bilder/cnc-dreher.jpg` – bei `?stelle=cnc-dreher` (aus `_DSC7566`, CLX 450 TC Drehmaschine)
-  - `bilder/rundschleifer.jpg` – bei `?stelle=rundschleifer` (aus `_DSC7321`)
+  - `bilder/rundschleifer.jpg` – bei `?stelle=rundschleifer` (aus `_DSC7119`, Rundschleifmaschine)
 
 Die Original-Uploads bleiben unangetastet im Repo-Root liegen (nur nicht direkt eingebunden,
 da sie mit 17–18 MB die Ladezeit sprengen würden). Neue/andere Fotos einfach als
