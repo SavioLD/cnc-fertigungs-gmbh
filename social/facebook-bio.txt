@@ -1,0 +1,14 @@
+FACEBOOK – CNC Fertigungs GmbH
+
+Bilder:
+- facebook-profilbild.png        (1080x1080, Logo – passend zum Instagram-Profil)
+- facebook-titelbild.png         (1702x630 = 851x315-Ratio, 2x fuer Schaerfe)
+- facebook-titelbild-851x315.png (exaktes FB-Mindestmass)
+Hinweis: Auf dem Desktop ueberlappt das Profilbild die untere linke Ecke des Titelbilds –
+der Text ist deshalb zentriert (auch mobil-sicher).
+
+BIO (max. 255 Zeichen) – 244 Zeichen:
+CNC Fertigungs GmbH – Ihr starker Partner für Präzision aus Laichingen. Seit 1997 fertigen wir hochgenaue Dreh-, Fräs- & Schleifteile, Prototypen & Kleinserien für den Sondermaschinenbau. Komplettfertigung aus einer Hand – präzise & termintreu.
+
+Kuerzere Alternative – 210 Zeichen:
+Ihr starker Partner für Präzision aus Laichingen. Seit 1997: hochgenaue Dreh-, Fräs- & Schleifteile, Prototypen & Kleinserien für den Sondermaschinenbau. Komplettfertigung aus einer Hand – präzise & termintreu.
