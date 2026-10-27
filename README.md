@@ -74,11 +74,14 @@ Jede abgeschlossene Bewerbung wird per Webhook an die **Leadtable-Kachel** der C
 Fertigungs GmbH gesendet. Felder u. a.: `name` (ein Feld, Vorname + Nachname),
 `email`, `telefon`, `stelle`, `erfahrung`, `cnc_erfahrung`, `technik`, `schicht`,
 `qualifikation_score`, `lebenslauf`, `datenschutz`, `quelle`, `seite`.
-Der Webhook ist in `index.html` in der Variable `WEBHOOK_URL` hinterlegt
-(`https://api-v2.lead-table.com/api/webhook/generic/…`).
+**Pro Stelle eine eigene Leadtable-Kachel** – in `index.html` in `WEBHOOK_URLS` hinterlegt
+(Routing über `webhookFor(stelle)`): CNC-Dreher und Rundschleifer gehen an unterschiedliche
+Webhooks (`api-v2.lead-table.com/api/webhook/generic/…`). Weitere/neue Stellen einfach
+als Schlüssel (`cnc-dreher` / `rundschleifer` / …) ergänzen.
 
-Leadtable-Kachel:
-`https://portal.lead-table.com/customer/6a8ec617a9e3d55df560ff70/table/6a8ec62e806ae78eb15bc0ff/leads`
+Leadtable-Kacheln:
+- CNC-Dreher:    `…/table/6a8ec62e806ae78eb15bc0ff/leads`
+- Rundschleifer: `…/table/6ae08ea8da44e341a1193304/leads`
 
 ## Lebenslauf-Upload
 

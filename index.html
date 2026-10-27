@@ -686,7 +686,13 @@ footer{padding:52px 0 36px;background:var(--brand-900);color:#dcecfb}
 (function(){
   "use strict";
 
-  var WEBHOOK_URL = "https://api-v2.lead-table.com/api/webhook/generic/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0YWJsZUlEIjoiNmE4ZWM2MmU4MDZhZTc4ZWIxNWJjMGZmIiwiY3VzdG9tZXJJRCI6IjZhOGVjNjE3YTllM2Q1NWRmNTYwZmY3MCIsImFnZW5jeUlEIjoiNjliZDc3NzVlNGQxN2IzOGVkNjUzZDE2IiwiaWF0IjoxNzg3NzQxNzQyfQ.XnW0B5GJehKENw9iA7ezNPKTTNhQKQmV_tR8al7fstU";
+  /* Leadtable-Webhook pro Stelle (eigene Kachel je Position) */
+  var WEBHOOK_URLS = {
+    "cnc-dreher":    "https://api-v2.lead-table.com/api/webhook/generic/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0YWJsZUlEIjoiNmE4ZWM2MmU4MDZhZTc4ZWIxNWJjMGZmIiwiY3VzdG9tZXJJRCI6IjZhOGVjNjE3YTllM2Q1NWRmNTYwZmY3MCIsImFnZW5jeUlEIjoiNjliZDc3NzVlNGQxN2IzOGVkNjUzZDE2IiwiaWF0IjoxNzg3NzQxNzQyfQ.XnW0B5GJehKENw9iA7ezNPKTTNhQKQmV_tR8al7fstU",
+    "rundschleifer": "https://api-v2.lead-table.com/api/webhook/generic/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0YWJsZUlEIjoiNmFlMDhlYThkYTQ0ZTM0MWExMTkzMzA0IiwiY3VzdG9tZXJJRCI6IjZhOGVjNjE3YTllM2Q1NWRmNTYwZmY3MCIsImFnZW5jeUlEIjoiNjliZDc3NzVlNGQxN2IzOGVkNjUzZDE2IiwiaWF0IjoxNzkzMTAxNDgwfQ.0pszfB5HokXwnuus0jw9p3h52WPKC1vw3PqtbpbroU4"
+  };
+  var WEBHOOK_URL = WEBHOOK_URLS["cnc-dreher"]; // Default/Fallback
+  function webhookFor(stelle){ for (var k in POSITIONS){ if (POSITIONS[k]===stelle) return WEBHOOK_URLS[k]||WEBHOOK_URL; } return WEBHOOK_URL; }
   var SUPABASE_URL  = "https://kxqdybjkcrowqdcpvlqa.supabase.co";
   var SUPABASE_KEY  = "sb_publishable_HRuh5O03dI84U_OngeWfRg_GwKnWkYp";
   var UPLOAD_BUCKET = "bewerbungen";
@@ -885,9 +891,10 @@ footer{padding:52px 0 36px;background:var(--brand-900);color:#dcecfb}
     uploadCv().then(function(cvUrl){
       btnNext.textContent="Wird gesendet …";
       var data=collect(); data.lebenslauf=cvUrl||"nicht hochgeladen"; var payload=JSON.stringify(data);
-      return fetch(WEBHOOK_URL,{ method:"POST", headers:{ "Content-Type":"application/json" }, body:payload })
+      var url=webhookFor(data.stelle);
+      return fetch(url,{ method:"POST", headers:{ "Content-Type":"application/json" }, body:payload })
         .then(function(res){ if(!res.ok) throw new Error("HTTP "+res.status); finishSuccess(); })
-        .catch(function(){ return fetch(WEBHOOK_URL,{ method:"POST", mode:"no-cors", headers:{ "Content-Type":"text/plain" }, body:payload }).then(finishSuccess); });
+        .catch(function(){ return fetch(url,{ method:"POST", mode:"no-cors", headers:{ "Content-Type":"text/plain" }, body:payload }).then(finishSuccess); });
     }).catch(function(err){
       submitting=false; btnNext.disabled=false; btnNext.textContent="Bewerbung absenden";
       if (err&&err.isUploadError) setUploadError("Der Upload hat leider nicht geklappt. Bitte versuche es noch einmal – oder entferne die Datei über das × und schicke den Lebenslauf später an info@cncfertigung.de.");
