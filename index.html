@@ -698,9 +698,13 @@ footer{padding:52px 0 36px;background:var(--brand-900);color:#dcecfb}
   var UPLOAD_BUCKET = "bewerbungen";
   var UPLOAD_MAX    = 10 * 1024 * 1024;
   var UPLOAD_TYPES  = ["application/pdf","image/jpeg","image/png","image/webp","application/msword","application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
-  /* Qualifizierungs-Scoring: Absage NUR, wenn ALLE Fragen maximal schlecht (Summe <= REJECT_AT). */
+  /* ---------- KO-Kriterien & Scoring ----------
+     KO = eine einzige dieser Antworten führt SOFORT zur Absage (kein Lead).
+     Optional/einarbeitbar (z. B. Zeichnung/Messtechnik) steuert NICHT aus, fließt nur in den Score. */
   var QUAL_FIELDS   = ["erfahrung","cnc_erfahrung","technik","schicht"];
-  var REJECT_AT     = 0;
+  var KO_ALWAYS     = ["Keine Ausbildung und keine Erfahrung im Bereich", "Nein, Schichtarbeit passt nicht"];
+  var KO_CNC_DREHER = ["Keine Erfahrung mit CNC-Maschinen"]; // CNC-Erfahrung ist nur beim CNC-Dreher ein KO
+  function koAnswersFor(stelle){ return (stelle===POSITIONS["cnc-dreher"]) ? KO_ALWAYS.concat(KO_CNC_DREHER) : KO_ALWAYS; }
 
   var ALIASES = {
     "cnc-dreher":"cnc-dreher","cncdreher":"cnc-dreher","dreher":"cnc-dreher","cnc":"cnc-dreher","drehen":"cnc-dreher","zerspaner":"cnc-dreher",
@@ -782,10 +786,10 @@ footer{padding:52px 0 36px;background:var(--brand-900);color:#dcecfb}
     errBox.classList.remove("is-visible");
   }
   function qualScore(){ var t=0,a=0; QUAL_FIELDS.forEach(function(f){ var c=form.querySelector('input[name="'+f+'"]:checked'); if(c){ a++; t+=parseInt(c.getAttribute("data-score")||"0",10); } }); return {total:t, answered:a}; }
-  function isScreenedOut(){ var s=qualScore(); return s.answered===QUAL_FIELDS.length && s.total<=REJECT_AT; }
+  function stepKO(n){ var el=stepEl(n), c=el.querySelector('input[type="radio"]:checked'); return c ? (koAnswersFor(selectedValue("stelle")).indexOf(c.value)!==-1) : false; }
   function next(){
     if (locked || !stepValid(current) || submitting) return;
-    if (current===TOTAL-1 && isScreenedOut()){ showScreenout(); return; }
+    if (stepKO(current)){ showScreenout(); return; }   // KO-Kriterium -> sofortige Absage (kein Lead)
     if (current===TOTAL){ submit(); return; }
     current++; render();
     var card=document.querySelector(".form-card");

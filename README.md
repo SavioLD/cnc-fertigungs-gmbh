@@ -49,24 +49,26 @@ beim Erfahrungs-Schritt:
 - `…/?stelle=cnc-dreher`
 - `…/?stelle=rundschleifer`
 
-## Screening (Vorfilterung) mit Punktelogik
+## Screening (Vorfilterung) mit KO-Kriterien
 
-Der Funnel stellt **4 Qualifizierungsfragen** (je Antwort ein Score):
+Der Funnel stellt **4 Qualifizierungsfragen**. **KO-Kriterien steuern sofort aus:**
+Wählt jemand eine KO-Antwort, erscheint direkt die freundliche Absage und es wird
+**kein Lead** an Leadtable gesendet (keine Summenlogik mehr – eine einzige KO-Antwort reicht).
 
-1. `erfahrung` – Ausbildung/Berufserfahrung (0–3)
-2. `cnc_erfahrung` – Erfahrung an CNC-Maschinen / Steuerung (0–3)
-3. `technik` – Zeichnung lesen & Messmittel (0–2)
-4. `schicht` – Bereitschaft Zweischichtbetrieb (0–2)
+**KO-Kriterien (jede einzelne Antwort = sofortige Absage):**
+- `erfahrung` = „Weder Ausbildung noch Erfahrung im Bereich“  → beide Stellen
+- `schicht` = „Nein, Schichtarbeit passt nicht“               → beide Stellen (Zweischichtbetrieb)
+- `cnc_erfahrung` = „Keine Erfahrung mit CNC-Maschinen“        → nur CNC-Dreher
 
-Maximal erreichbar: **10 Punkte**. Eine Bewerbung wird **freundlich abgelehnt**
-(**kein Lead** an Leadtable) **nur dann**, wenn die Summe `<= REJECT_AT` ist –
-Standard `REJECT_AT = 0`, d. h. **ausschließlich, wenn alle vier Fragen maximal
-schlecht** beantwortet wurden. Alles andere geht als Lead durch.
+**Optionale / einarbeitbare Kriterien (steuern NICHT aus, nur Info):**
+- `technik` (Zeichnung lesen & Messtechnik) – einarbeitbar
+- die mittleren Stufen aller Fragen (z. B. „Grundkenntnisse“, „nur nach Absprache“)
+- beim **Rundschleifer** zählt fehlende CNC-Erfahrung NICHT als KO (konventionelles Schleifen möglich)
 
-**Strenger/lockerer stellen:** In `index.html` die Variable `REJECT_AT` erhöhen
-(z. B. `2`, dann werden auch sehr schwache Profile ausgesteuert) oder die
-`data-score`-Werte an den Antworten anpassen. Ein Seiten-Neuladen startet den
-Prozess frisch (keine dauerhafte Sperre).
+**Anpassen:** In `index.html` die Listen `KO_ALWAYS` / `KO_CNC_DREHER` bearbeiten
+(Antworttext exakt wie im `value`-Attribut der jeweiligen Option). KO ergänzen = Wert
+in die Liste aufnehmen; Kriterium optional machen = Wert entfernen. `qualifikation_score`
+(0–10) läuft weiter mit und landet zur Info im Lead. Seiten-Neuladen startet frisch.
 
 ## Bewerbungen (Leadtable)
 
