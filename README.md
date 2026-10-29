@@ -51,30 +51,38 @@ beim Erfahrungs-Schritt:
 
 ## Screening (Vorfilterung) mit KO-Kriterien
 
-Der Funnel stellt **4 Qualifizierungsfragen**. **KO-Kriterien steuern sofort aus:**
-Wählt jemand eine KO-Antwort, erscheint direkt die freundliche Absage und es wird
-**kein Lead** an Leadtable gesendet (keine Summenlogik mehr – eine einzige KO-Antwort reicht).
+Der Funnel stellt **5 Qualifizierungsfragen** (Erfahrung · CNC-Erfahrung · Zeichnung/Messtechnik ·
+Schicht · Arbeitsweg). **KO-Kriterien steuern sofort aus:** Wählt jemand eine KO-Antwort,
+erscheint direkt die freundliche Absage und es wird **kein Lead** an Leadtable gesendet
+(keine Summenlogik – eine einzige KO-Antwort reicht).
 
 **KO-Kriterien (jede einzelne Antwort = sofortige Absage):**
-- `erfahrung` = „Weder Ausbildung noch Erfahrung im Bereich“  → beide Stellen
-- `schicht` = „Nein, Schichtarbeit passt nicht“               → beide Stellen (Zweischichtbetrieb)
-- `cnc_erfahrung` = „Keine Erfahrung mit CNC-Maschinen“        → nur CNC-Dreher
+- `erfahrung` = „Weder Ausbildung noch Erfahrung im Bereich”            → beide Stellen
+- `technik`   = „Kann ich (noch) nicht” (Zeichnung lesen & Messtechnik) → beide Stellen
+- `schicht`   = „Nein, Schichtarbeit passt nicht”                       → beide Stellen (Zweischichtbetrieb)
+- `standort`  = „Nein, zu weit weg / Anfahrt nicht zuverlässig machbar” → beide Stellen
+- `cnc_erfahrung` = „Keine Erfahrung mit CNC-Maschinen”                 → nur CNC-Dreher
 
-**Optionale / einarbeitbare Kriterien (steuern NICHT aus, nur Info):**
-- `technik` (Zeichnung lesen & Messtechnik) – einarbeitbar
-- die mittleren Stufen aller Fragen (z. B. „Grundkenntnisse“, „nur nach Absprache“)
+**Optionale Kriterien (steuern NICHT aus, nur Info):**
+- die mittleren Stufen aller Fragen (z. B. „Grundkenntnisse”, „nur nach Absprache”,
+  „etwas weiter weg, aber Anfahrt zuverlässig machbar”)
 - beim **Rundschleifer** zählt fehlende CNC-Erfahrung NICHT als KO (konventionelles Schleifen möglich)
+
+**Arbeitsweg:** Standort ist 89150 Laichingen (Alb-Donau-Kreis). Die Frage filtert Bewerber aus,
+die nicht zuverlässig zum Standort kommen (Richtwert ~30–35 km Umkreis). „Etwas weiter weg,
+aber zuverlässig machbar” ist bewusst **kein** KO.
 
 **Anpassen:** In `index.html` die Listen `KO_ALWAYS` / `KO_CNC_DREHER` bearbeiten
 (Antworttext exakt wie im `value`-Attribut der jeweiligen Option). KO ergänzen = Wert
 in die Liste aufnehmen; Kriterium optional machen = Wert entfernen. `qualifikation_score`
-(0–10) läuft weiter mit und landet zur Info im Lead. Seiten-Neuladen startet frisch.
+(0–10) läuft weiter mit (nur erfahrung/cnc_erfahrung/technik/schicht) und landet zur Info
+im Lead. Seiten-Neuladen startet frisch.
 
 ## Bewerbungen (Leadtable)
 
 Jede abgeschlossene Bewerbung wird per Webhook an die **Leadtable-Kachel** der CNC
 Fertigungs GmbH gesendet. Felder u. a.: `name` (ein Feld, Vorname + Nachname),
-`email`, `telefon`, `stelle`, `erfahrung`, `cnc_erfahrung`, `technik`, `schicht`,
+`email`, `telefon`, `stelle`, `erfahrung`, `cnc_erfahrung`, `technik`, `schicht`, `standort`,
 `qualifikation_score`, `lebenslauf`, `datenschutz`, `quelle`, `seite`.
 **Pro Stelle eine eigene Leadtable-Kachel** – in `index.html` in `WEBHOOK_URLS` hinterlegt
 (Routing über `webhookFor(stelle)`): CNC-Dreher und Rundschleifer gehen an unterschiedliche

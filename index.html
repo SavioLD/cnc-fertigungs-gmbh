@@ -508,7 +508,7 @@ footer{padding:52px 0 36px;background:var(--brand-900);color:#dcecfb}
     <div class="form-card">
       <div class="form-card__head">
         <div class="progress"><div class="progress__bar" id="progressBar"></div></div>
-        <div class="progress__label"><span id="stepLabel">Schritt 1 von 3</span><span>~60 Sek.</span></div>
+        <div class="progress__label"><span id="stepLabel">Schritt 1 von 7</span><span>~60 Sek.</span></div>
       </div>
 
       <form class="form-card__body" id="applyForm" novalidate>
@@ -574,8 +574,20 @@ footer{padding:52px 0 36px;background:var(--brand-900);color:#dcecfb}
           </div>
         </div>
 
-        <!-- STEP 6 -->
+        <!-- STEP 6: Arbeitsweg / Standort -->
         <div class="fstep" data-step="6">
+          <h3>Dein Arbeitsweg</h3>
+          <p class="hint">Unser Standort ist in <strong>89150 Laichingen</strong> (Alb-Donau-Kreis).</p>
+          <p class="q">Kommst du zuverlässig zu uns nach Laichingen zur Arbeit?<span class="req">*</span></p>
+          <div class="choice-grid" data-field="standort">
+            <label class="choice"><input type="radio" name="standort" data-score="2" value="Ja, ich wohne im Umkreis von ca. 30 km" /><span class="key">A</span><span>Ja – ich wohne im Umkreis von ca. 30&nbsp;km</span></label>
+            <label class="choice"><input type="radio" name="standort" data-score="1" value="Ja, etwas weiter weg - Anfahrt ist zuverlässig machbar" /><span class="key">B</span><span>Ja – etwas weiter weg <small>Anfahrt ist für mich zuverlässig machbar</small></span></label>
+            <label class="choice"><input type="radio" name="standort" data-score="0" value="Nein, zu weit weg / Anfahrt nicht zuverlässig machbar" /><span class="key">C</span><span>Nein – zu weit weg <small>Anfahrt nicht zuverlässig machbar</small></span></label>
+          </div>
+        </div>
+
+        <!-- STEP 7 -->
+        <div class="fstep" data-step="7">
           <h3>Du hast es fast geschafft</h3>
           <p class="hint">Hinterlasse kurz deine Kontaktdaten. Wir melden uns persönlich bei dir.</p>
           <div class="frow">
@@ -614,7 +626,7 @@ footer{padding:52px 0 36px;background:var(--brand-900);color:#dcecfb}
         <div class="result" id="screenoutView">
           <div class="result__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg></div>
           <h3>Danke für dein Interesse</h3>
-          <p>Nach deinen Angaben passt es für diese Stelle aktuell leider noch nicht – wir setzen zumindest handwerkliche Grundlagen in der Zerspanung voraus. Du bist überzeugt, dass du trotzdem zu uns passt? Dann schreib uns gerne direkt an <a href="mailto:info@cncfertigung.de">info@cncfertigung.de</a>.<br /><br />Aus Versehen etwas falsch angeklickt? Lade die Seite einfach neu und versuche es erneut.</p>
+          <p>Nach deinen Angaben passt es für diese Stelle aktuell leider noch nicht. Du bist überzeugt, dass du trotzdem zu uns passt? Dann schreib uns gerne direkt an <a href="mailto:info@cncfertigung.de">info@cncfertigung.de</a>.<br /><br />Aus Versehen etwas falsch angeklickt? Lade die Seite einfach neu und versuche es erneut.</p>
         </div>
 
         <div class="fnav" id="formNav">
@@ -700,10 +712,15 @@ footer{padding:52px 0 36px;background:var(--brand-900);color:#dcecfb}
   var UPLOAD_TYPES  = ["application/pdf","image/jpeg","image/png","image/webp","application/msword","application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
   /* ---------- KO-Kriterien & Scoring ----------
      KO = eine einzige dieser Antworten führt SOFORT zur Absage (kein Lead).
-     Optional/einarbeitbar (z. B. Zeichnung/Messtechnik) steuert NICHT aus, fließt nur in den Score. */
+     qualifikation_score (0–10) läuft nur zur Info mit (erfahrung/cnc_erfahrung/technik/schicht). */
   var QUAL_FIELDS   = ["erfahrung","cnc_erfahrung","technik","schicht"];
-  var KO_ALWAYS     = ["Keine Ausbildung und keine Erfahrung im Bereich", "Nein, Schichtarbeit passt nicht"];
-  var KO_CNC_DREHER = ["Keine Erfahrung mit CNC-Maschinen"]; // CNC-Erfahrung ist nur beim CNC-Dreher ein KO
+  var KO_ALWAYS     = [
+    "Keine Ausbildung und keine Erfahrung im Bereich",        // erfahrung D
+    "Kann ich (noch) nicht",                                  // technik C  (Zeichnung lesen & Messtechnik)
+    "Nein, Schichtarbeit passt nicht",                        // schicht C  (Zweischichtbetrieb)
+    "Nein, zu weit weg / Anfahrt nicht zuverlässig machbar"   // standort C (Arbeitsweg Laichingen, ~30–35 km)
+  ];
+  var KO_CNC_DREHER = ["Keine Erfahrung mit CNC-Maschinen"];  // CNC-Erfahrung ist nur beim CNC-Dreher ein KO
   function koAnswersFor(stelle){ return (stelle===POSITIONS["cnc-dreher"]) ? KO_ALWAYS.concat(KO_CNC_DREHER) : KO_ALWAYS; }
 
   var ALIASES = {
@@ -885,7 +902,7 @@ footer{padding:52px 0 36px;background:var(--brand-900);color:#dcecfb}
     // Name bewusst NUR als ein einziges Feld senden, damit Leadtable im
     // "Name"-Feld nichts mehr zusammensetzt/doppelt (kein vorname/nachname zusätzlich).
     return { name:(val("vorname")+" "+val("nachname")).trim(), email:val("email"), telefon:val("telefon"),
-             stelle:val("stelle"), erfahrung:val("erfahrung"), cnc_erfahrung:val("cnc_erfahrung"), technik:val("technik"), schicht:val("schicht"),
+             stelle:val("stelle"), erfahrung:val("erfahrung"), cnc_erfahrung:val("cnc_erfahrung"), technik:val("technik"), schicht:val("schicht"), standort:val("standort"),
              qualifikation_score:String(qualScore().total)+" von 10", lebenslauf:"", datenschutz:"Ja (Einwilligung mit Absenden, Art. 6 Abs. 1 lit. a DSGVO)",
              quelle:"Karriere-Landingpage CNC Fertigung", seite:location.href };
   }
