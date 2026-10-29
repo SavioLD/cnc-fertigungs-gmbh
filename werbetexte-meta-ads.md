@@ -5,8 +5,8 @@ Ziel: qualifizierte Bewerbungen (CNC-Dreher, Rundschleifer).
 Tonalität: direkt, wertschätzend, handwerklich – kein Konzern-Sprech, „du“.
 
 **Ziel-URLs (mit Deeplink + UTM):**
-- CNC-Dreher: `https://saviold.github.io/cnc-einrichtungs-gmbh/?stelle=cnc-dreher&utm_source=meta&utm_medium=paid&utm_campaign=recruiting&utm_content=cnc-dreher`
-- Rundschleifer: `https://saviold.github.io/cnc-einrichtungs-gmbh/?stelle=rundschleifer&utm_source=meta&utm_medium=paid&utm_campaign=recruiting&utm_content=rundschleifer`
+- CNC-Dreher: `https://saviold.github.io/cnc-fertigungs-gmbh/?stelle=cnc-dreher&utm_source=meta&utm_medium=paid&utm_campaign=recruiting&utm_content=cnc-dreher`
+- Rundschleifer: `https://saviold.github.io/cnc-fertigungs-gmbh/?stelle=rundschleifer&utm_source=meta&utm_medium=paid&utm_campaign=recruiting&utm_content=rundschleifer`
 
 > Basis-URL nach Go-Live ggf. auf die endgültige Domain (z. B. Custom Domain) anpassen.
 

@@ -13,8 +13,8 @@ Aus den echten Werksfotos + Firmenlogo erzeugt. Je Stelle ein Feed- und ein Stor
 
 ## Passende Ziel-URL je Creative (Deeplink + UTM)
 
-- CNC-Dreher → `https://saviold.github.io/cnc-einrichtungs-gmbh/?stelle=cnc-dreher&utm_source=meta&utm_medium=paid&utm_campaign=recruiting&utm_content=cnc-dreher`
-- Rundschleifer → `https://saviold.github.io/cnc-einrichtungs-gmbh/?stelle=rundschleifer&utm_source=meta&utm_medium=paid&utm_campaign=recruiting&utm_content=rundschleifer`
+- CNC-Dreher → `https://saviold.github.io/cnc-fertigungs-gmbh/?stelle=cnc-dreher&utm_source=meta&utm_medium=paid&utm_campaign=recruiting&utm_content=cnc-dreher`
+- Rundschleifer → `https://saviold.github.io/cnc-fertigungs-gmbh/?stelle=rundschleifer&utm_source=meta&utm_medium=paid&utm_campaign=recruiting&utm_content=rundschleifer`
 
 > Basis-URL nach evtl. Repo-Umbenennung / Custom-Domain anpassen. Werbetexte
 > (Primary Text, Headlines, Descriptions) stehen in `../werbetexte-meta-ads.md`.
